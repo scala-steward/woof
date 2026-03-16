@@ -4,7 +4,7 @@ val V = new {
   val cats            = "2.10.0"
   val catsEffect      = "3.6.3"
   val circe           = "0.14.8"
-  val http4s          = "0.23.30"
+  val http4s          = "0.23.32"
   val munit           = "1.0.0-M11"
   val munitCatsEffect = "2.1.0"
   val scala           = "3.4.1"
@@ -38,7 +38,7 @@ inThisBuild(
     organization           := "org.legogroup",
     homepage               := Some(url("https://github.com/LEGO/woof")),
     licenses               := List("Apache-2.0" -> url("http://www.apache.org/licenses/LICENSE-2.0")),
-    developers := List(
+    developers             := List(
       Developer(
         "hejfelix",
         "Felix Bjært Hargreaves",
@@ -91,7 +91,7 @@ lazy val root =
     )
 
 val coreFolder = file("./modules/core")
-lazy val core = crossProject(JSPlatform, JVMPlatform, NativePlatform)
+lazy val core  = crossProject(JSPlatform, JVMPlatform, NativePlatform)
   .in(coreFolder)
   .settings(commonSettings)
   .settings(
@@ -109,7 +109,7 @@ lazy val core = crossProject(JSPlatform, JVMPlatform, NativePlatform)
   )
 
 val http4sFolder = file("./modules/http4s")
-lazy val http4s = crossProject(JSPlatform, JVMPlatform, NativePlatform)
+lazy val http4s  = crossProject(JSPlatform, JVMPlatform, NativePlatform)
   .crossType(CrossType.Pure)
   .in(http4sFolder)
   .settings(
